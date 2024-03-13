@@ -1,0 +1,3 @@
+D:/Coding/searchEngine/tests/cmake-build-debug/CMakeFiles/tests.dir
+D:/Coding/searchEngine/tests/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Coding/searchEngine/tests/cmake-build-debug/CMakeFiles/rebuild_cache.dir
