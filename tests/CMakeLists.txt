@@ -1,21 +1,8 @@
-cmake_minimum_required (VERSION 3.8)
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-
-set(SrcFiles
-	${MY_SRC_DIR}/InvertedIndex.cpp
-	${MY_SRC_DIR}/SearchEngine.cpp
-	${MY_SRC_DIR}/ConverterJSON.cpp
-)
-
-set(TestsFiles
-	InvertedIndex_test.cpp
-	SearchEngine_test.cpp
-	ConverterJSON_test.cpp
-)
-
-add_executable(GtestTests ${TestsFiles} ${SrcFiles})
-target_link_libraries(GtestTests nlohmann_json::nlohmann_json GTest::gtest_main)
-include(GoogleTest)
-target_include_directories(GtestTests PUBLIC ${MY_INCLUDE_DIR})
-gtest_discover_tests(GtestTests)
+project(tests)
+add_subdirectory(lib/googletest)
+include_directories(lib/googletest/googletest/include)
+include_directories(include)
+set(SOURCE_FILES ConverterJSON_test.cpp InvertedIndex_test.cpp SearchServer_test.cpp)
+set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
+add_executable(testsRun ${SOURCE_FILES})
+target_link_libraries(testsRun gtest gtest_main)

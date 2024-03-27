@@ -7,6 +7,7 @@
 #include <cassert>
 #include <fstream>
 #include "../nlohmann_json/json.hpp"
+
 #include "SearchServer.h"
 
 class ConverterJSON {
